@@ -13,7 +13,7 @@
 </svelte:head>
 
 <!-- Works Section -->
-<section class="bg-gray-100 m-4 p-4 rounded-lg dark:bg-gray-800 dark:text-white">
+<section class="bg-gray-100 m-4 p-4 pixel-section dark:bg-gray-800 dark:text-white">
 	<h2 class="text-2xl text-main font-bold mb-4">Works</h2>
 	<div class="flex flex-wrap justify-evenly gap-4">
 		{#each data.works as work}
@@ -23,10 +23,10 @@
 						<img
 							src={work.thumbnail.url}
 							alt={work.title}
-							class="w-full aspect-[4/3] object-cover rounded-lg hover:opacity-80 transition-opacity"
+							class="pixel-pressable w-full aspect-[4/3] object-cover"
 						/>
 					{:else}
-						<div class="w-full aspect-[4/3] bg-gray-300 rounded-lg flex items-center justify-center">
+						<div class="pixel-pressable w-full aspect-[4/3] bg-gray-300 flex items-center justify-center">
 							<span class="text-gray-500">No Image</span>
 						</div>
 					{/if}
@@ -43,7 +43,7 @@
 </section>
 
 <!-- Blog Section -->
-<section class="bg-gray-100 m-4 p-4 rounded-lg dark:bg-gray-800 dark:text-white">
+<section class="bg-gray-100 m-4 p-4 pixel-section dark:bg-gray-800 dark:text-white">
 	<h2 class="text-2xl text-main font-bold mb-4">Blog</h2>
 	<ul class="list-disc m-4">
 		<li><a href="/blog" class="text-cyan-600 hover:underline">Blog</a></li>
@@ -51,7 +51,7 @@
 </section>
 
 <!-- SNS Section -->
-<section class="bg-gray-100 m-4 p-4 rounded-lg dark:bg-gray-800 dark:text-white">
+<section class="bg-gray-100 m-4 p-4 pixel-section dark:bg-gray-800 dark:text-white">
 	<h2 class="text-2xl text-main font-bold mb-4">SNS</h2>
 	<ul class="list-disc m-4">
 		<li><a href="https://www.instagram.com/lnln_ch" class="text-cyan-600 hover:underline" target="_blank" rel="noopener noreferrer">Instagram (@lnln_ch)</a></li>
@@ -61,7 +61,7 @@
 </section>
 
 <!-- Links Section -->
-<section class="bg-gray-100 m-4 p-4 rounded-lg dark:bg-gray-800 dark:text-white">
+<section class="bg-gray-100 m-4 p-4 pixel-section dark:bg-gray-800 dark:text-white">
 	<h2 class="text-2xl text-main font-bold mb-4">Links</h2>
 	<p class="mb-4">いつの間にか僕のサイトのリンクが友人や先輩や後輩のサイトに貼られていたので、私も貼って相互にします</p>
 	<ul class="list-disc m-4">

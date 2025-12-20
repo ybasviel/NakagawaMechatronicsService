@@ -29,7 +29,7 @@
 		<div class="mr-6 text-gray-400">{formatDate(data.blog.publishedAt)}</div>
 	</div>
 
-	<section class="bg-gray-100 my-4 p-4 rounded-lg dark:bg-gray-800 dark:text-white">
+	<section class="bg-gray-100 my-4 p-4 pixel-section dark:bg-gray-800 dark:text-white">
 		<article class="prose">
 			{@html data.blog.content}
 		</article>

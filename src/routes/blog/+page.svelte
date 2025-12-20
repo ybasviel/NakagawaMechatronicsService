@@ -19,7 +19,7 @@
 
 <a class="m-6 text-cyan-600 hover:underline" href="/">Home</a>
 
-<section class="bg-gray-100 m-4 p-4 rounded-lg dark:bg-gray-800 dark:text-white">
+<section class="bg-gray-100 m-4 p-4 pixel-section dark:bg-gray-800 dark:text-white">
 	<h2 class="text-2xl text-main font-bold mb-4">最新3件のブログ</h2>
 	<ul class="list-disc m-4">
 		{#each data.latestBlogs as blog}
@@ -32,7 +32,7 @@
 	</ul>
 </section>
 
-<section class="bg-gray-100 m-4 p-4 rounded-lg dark:bg-gray-800 dark:text-white">
+<section class="bg-gray-100 m-4 p-4 pixel-section dark:bg-gray-800 dark:text-white">
 	<h2 class="text-2xl text-main font-bold mb-4">月別アーカイブ</h2>
 	<div class="ml-2">
 		{#each Object.entries(data.archive) as [yearMonth, blogs]}
