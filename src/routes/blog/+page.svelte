@@ -17,7 +17,9 @@
 	<meta property="og:description" content="個人的な適当な記録です" />
 </svelte:head>
 
-<a class="m-6 text-cyan-600 hover:underline" href="/">Home</a>
+<div class="m-4 flex gap-4">
+	<a class="pixel-nav-btn" href="/">Home</a>
+</div>
 
 <section class="bg-gray-100 m-4 p-4 pixel-section dark:bg-gray-800 dark:text-white">
 	<h2 class="text-2xl text-main font-bold mb-4">最新3件のブログ</h2>

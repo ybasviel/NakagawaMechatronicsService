@@ -21,10 +21,10 @@
 </svelte:head>
 
 <div class="container mx-auto px-4 max-w-screen-lg">
-	<div class="flex justify-between items-center">
-		<div>
-			<a class="ml-6 text-cyan-600 hover:underline" href="/">Home</a>
-			<a class="ml-6 text-cyan-600 hover:underline" href="/blog">Blog</a>
+	<div class="flex justify-between items-center my-4">
+		<div class="flex gap-4">
+			<a class="pixel-nav-btn" href="/">Home</a>
+			<a class="pixel-nav-btn" href="/blog">Blog</a>
 		</div>
 		<div class="mr-6 text-gray-400">{formatDate(data.blog.publishedAt)}</div>
 	</div>

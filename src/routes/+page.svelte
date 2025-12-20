@@ -42,22 +42,15 @@
 	</div>
 </section>
 
-<!-- Blog Section -->
+<!-- Blog & SNS Section -->
 <section class="bg-gray-100 m-4 p-4 pixel-section dark:bg-gray-800 dark:text-white">
-	<h2 class="text-2xl text-main font-bold mb-4">Blog</h2>
-	<ul class="list-disc m-4">
-		<li><a href="/blog" class="text-cyan-600 hover:underline">Blog</a></li>
-	</ul>
-</section>
-
-<!-- SNS Section -->
-<section class="bg-gray-100 m-4 p-4 pixel-section dark:bg-gray-800 dark:text-white">
-	<h2 class="text-2xl text-main font-bold mb-4">SNS</h2>
-	<ul class="list-disc m-4">
-		<li><a href="https://www.instagram.com/lnln_ch" class="text-cyan-600 hover:underline" target="_blank" rel="noopener noreferrer">Instagram (@lnln_ch)</a></li>
-		<li><a href="https://discordapp.com/users/316944552789540875" class="text-cyan-600 hover:underline" target="_blank" rel="noopener noreferrer">discord @ybasviel</a></li>
-		<li><a href="https://github.com/ybasviel" class="text-cyan-600 hover:underline" target="_blank" rel="noopener noreferrer">github @ybasviel</a></li>
-	</ul>
+	<h2 class="text-2xl text-main font-bold mb-4">Blog & SNS</h2>
+	<div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+		<a class="pixel-nav-btn text-center" href="/blog">Blog</a>
+		<a class="pixel-nav-btn text-center" href="https://www.instagram.com/lnln_ch" target="_blank" rel="noopener noreferrer">Instagram</a>
+		<a class="pixel-nav-btn text-center" href="https://discordapp.com/users/316944552789540875" target="_blank" rel="noopener noreferrer">Discord</a>
+		<a class="pixel-nav-btn text-center" href="https://github.com/ybasviel" target="_blank" rel="noopener noreferrer">GitHub</a>
+	</div>
 </section>
 
 <!-- Links Section -->
