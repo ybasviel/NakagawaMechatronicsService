@@ -179,7 +179,9 @@ img {
 }
 
 .prose img {
-	@apply max-h-96 max-w-full mx-auto;
+	@apply max-w-full mx-auto;
+	height: auto;
+	aspect-ratio: auto;
 }
 
 .prose figure {
