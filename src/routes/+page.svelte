@@ -85,7 +85,7 @@
 <section class="bg-gray-100 m-4 p-4 pixel-section dark:bg-gray-800 dark:text-white">
 	<h2 class="text-2xl text-main font-bold mb-4">Links</h2>
 	<div class="leading-relaxed text-base">
-		<p class="mb-4">いつの間にか僕のサイトのリンクが友人や先輩や後輩のサイトに貼られていたので、私も貼って相互にします</p>
+		<p class="mb-4">大学の知り合いのサイトを紹介</p>
 	</div>
 	<ul class="list-disc ml-7 my-4">
 		<li><a href="https://gotti.dev" class="text-cyan-600 hover:underline" target="_blank" rel="noopener noreferrer">ごっち(gotti.dev)</a></li>
