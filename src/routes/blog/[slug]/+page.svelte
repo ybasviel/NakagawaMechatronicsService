@@ -20,8 +20,8 @@
 	{/if}
 </svelte:head>
 
-<div class="container mx-auto px-4 max-w-screen-lg">
-	<div class="flex justify-between items-center my-4">
+<div class="m-4">
+	<div class="flex justify-between items-center my-4 max-w-screen-lg mx-auto">
 		<div class="flex gap-4">
 			<a class="pixel-nav-btn" href="/">Home</a>
 			<a class="pixel-nav-btn" href="/blog">Blog</a>
@@ -30,7 +30,7 @@
 	</div>
 
 	<section class="bg-gray-100 my-4 p-4 pixel-section dark:bg-gray-800 dark:text-white">
-		<article class="prose">
+		<article class="prose max-w-screen-lg mx-auto">
 			{@html data.blog.content}
 		</article>
 	</section>

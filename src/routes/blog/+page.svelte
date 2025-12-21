@@ -17,40 +17,44 @@
 	<meta property="og:description" content="個人的な適当な記録です" />
 </svelte:head>
 
-<div class="m-4 flex gap-4">
+<div class="m-4 flex gap-4 max-w-screen-lg mx-auto">
 	<a class="pixel-nav-btn" href="/">Home</a>
 </div>
 
 <section class="bg-gray-100 m-4 p-4 pixel-section dark:bg-gray-800 dark:text-white">
-	<h2 class="text-2xl text-main font-bold mb-4">最新3件のブログ</h2>
-	<ul class="list-disc m-4">
-		{#each data.latestBlogs as blog}
-			<li>
-				<a href="/blog/{blog.id}" class="text-cyan-600 hover:underline">
-					{blog.title} - {formatDate(blog.publishedAt)}
-				</a>
-			</li>
-		{/each}
-	</ul>
+	<div class="max-w-screen-lg mx-auto">
+		<h2 class="text-2xl text-main font-bold mb-4">最新3件のブログ</h2>
+		<ul class="list-disc m-4">
+			{#each data.latestBlogs as blog}
+				<li>
+					<a href="/blog/{blog.id}" class="text-cyan-600 hover:underline">
+						{blog.title} - {formatDate(blog.publishedAt)}
+					</a>
+				</li>
+			{/each}
+		</ul>
+	</div>
 </section>
 
 <section class="bg-gray-100 m-4 p-4 pixel-section dark:bg-gray-800 dark:text-white">
-	<h2 class="text-2xl text-main font-bold mb-4">月別アーカイブ</h2>
-	<div class="ml-2">
-		{#each Object.entries(data.archive) as [yearMonth, blogs]}
-			<details class="cursor-pointer mb-2">
-				<summary class="font-medium">{yearMonth}</summary>
-				<ul class="ml-6 mt-1">
-					{#each blogs as blog}
-						<li class="my-1">
-							<a href="/blog/{blog.id}" class="text-cyan-600 hover:underline">
-								{blog.title} - {formatDate(blog.publishedAt)}
-							</a>
-						</li>
-					{/each}
-				</ul>
-			</details>
-		{/each}
+	<div class="max-w-screen-lg mx-auto">
+		<h2 class="text-2xl text-main font-bold mb-4">月別アーカイブ</h2>
+		<div class="ml-2">
+			{#each Object.entries(data.archive) as [yearMonth, blogs]}
+				<details class="cursor-pointer mb-2">
+					<summary class="font-medium">{yearMonth}</summary>
+					<ul class="ml-6 mt-1">
+						{#each blogs as blog}
+							<li class="my-1">
+								<a href="/blog/{blog.id}" class="text-cyan-600 hover:underline">
+									{blog.title} - {formatDate(blog.publishedAt)}
+								</a>
+							</li>
+						{/each}
+					</ul>
+				</details>
+			{/each}
+		</div>
 	</div>
 </section>
 
