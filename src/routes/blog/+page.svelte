@@ -13,10 +13,11 @@
 
 <svelte:head>
 	<title>Blog - なかがわ電機サービス</title>
-	<meta name="twitter:card" content="summary" />
-	<meta property="og:url" content="https://lnln.dev/blog" />
+	<meta property="og:url" content="https://nms.lnln.dev/blog" />
 	<meta property="og:title" content="Blog - なかがわ電機サービス" />
-	<meta property="og:description" content="個人的な適当な記録です" />
+	<meta property="og:description" content="適当な記録" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta property="og:image" content="https://nms.lnln.dev/img/logo.png" />
 </svelte:head>
 
 <div class="m-4">

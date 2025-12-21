@@ -8,10 +8,11 @@
 
 <svelte:head>
 	<title>なかがわ電機サービス</title>
-	<meta name="twitter:card" content="summary" />
-	<meta property="og:url" content="https://lnln.dev" />
+	<meta property="og:url" content="https://nms.lnln.dev" />
 	<meta property="og:title" content="なかがわ電機サービス" />
-	<meta property="og:description" content="趣味の工作の記録" />
+	<meta property="og:description" content="作品集" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta property="og:image" content="https://nms.lnln.dev/img/logo.png" />
 </svelte:head>
 
 <!-- Works Section -->

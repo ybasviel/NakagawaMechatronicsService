@@ -13,7 +13,7 @@
 <svelte:head>
 	<title>{data.blog.title} - なかがわ電機サービス</title>
 	<meta name="twitter:card" content={data.blog.thumbnail ? 'summary_large_image' : 'summary'} />
-	<meta property="og:url" content="https://lnln.dev/blog/{data.blog.id}" />
+	<meta property="og:url" content="https://nms.lnln.dev/blog/{data.blog.id}" />
 	<meta property="og:title" content={data.blog.title} />
 	<meta property="og:description" content="趣味の工作の記録" />
 	{#if data.blog.thumbnail}

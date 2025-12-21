@@ -6,7 +6,6 @@
 
 <svelte:head>
 	<meta name="twitter:site" content="@lnln_ch" />
-	<meta property="og:image" content="https://lnln.dev/img/title.png" />
 </svelte:head>
 
 <div class="min-h-screen bg-white dark:bg-black font-sans">
