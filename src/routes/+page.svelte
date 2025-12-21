@@ -15,6 +15,17 @@
 	<meta property="og:image" content="https://nms.lnln.dev/img/logo.png" />
 </svelte:head>
 
+<!-- About Section -->
+<section class="bg-gray-100 m-4 p-4 pixel-section dark:bg-gray-800 dark:text-white">
+	<h2 class="text-2xl text-main font-bold mb-4">About</h2>
+	<div class="leading-relaxed text-base">
+		<p>
+			なかがわ電機サービスは、<a href="https://x.com/lnln_ch" class="text-cyan-600 hover:underline" target="_blank" rel="noopener noreferrer">@lnln_ch</a>が運営する個人のものづくりサークルです。
+		</p>
+	</div>
+</section>
+
+
 <!-- Works Section -->
 <section class="bg-gray-100 m-4 p-4 pixel-section dark:bg-gray-800 dark:text-white">
 	<h2 class="text-2xl text-main font-bold mb-4">Works</h2>
@@ -45,6 +56,20 @@
 	</div>
 </section>
 
+<!-- Activity Section -->
+<section class="bg-gray-100 m-4 p-4 pixel-section dark:bg-gray-800 dark:text-white">
+	<h2 class="text-2xl text-main font-bold mb-4">Activity</h2>
+	<div class="leading-relaxed text-base">
+		<ul class="list-disc ml-7 my-4">
+			<li>NT東京2023</li>
+			<li>NT東京2024</li>
+			<li>NT金沢2025: 電気通信大学工学研究部と共同出展</li>
+			<li>技書博12: 黒暗児童遊園委託</li>
+			<li>電気通信大学 第75回 調布祭</li>
+		</ul>
+	</div>
+</section>
+
 <!-- Blog & SNS Section -->
 <section class="bg-gray-100 m-4 p-4 pixel-section dark:bg-gray-800 dark:text-white">
 	<h2 class="text-2xl text-main font-bold mb-4">Blog & SNS</h2>
@@ -59,8 +84,10 @@
 <!-- Links Section -->
 <section class="bg-gray-100 m-4 p-4 pixel-section dark:bg-gray-800 dark:text-white">
 	<h2 class="text-2xl text-main font-bold mb-4">Links</h2>
-	<p class="mb-4">いつの間にか僕のサイトのリンクが友人や先輩や後輩のサイトに貼られていたので、私も貼って相互にします</p>
-	<ul class="list-disc m-4">
+	<div class="leading-relaxed text-base">
+		<p class="mb-4">いつの間にか僕のサイトのリンクが友人や先輩や後輩のサイトに貼られていたので、私も貼って相互にします</p>
+	</div>
+	<ul class="list-disc ml-7 my-4">
 		<li><a href="https://gotti.dev" class="text-cyan-600 hover:underline" target="_blank" rel="noopener noreferrer">ごっち(gotti.dev)</a></li>
 		<li><a href="https://azukibar.dev" class="text-cyan-600 hover:underline" target="_blank" rel="noopener noreferrer">アイスの棒(azukibar.dev)</a></li>
 		<li><a href="https://www.hutinoatari.dev/" class="text-cyan-600 hover:underline" target="_blank" rel="noopener noreferrer">捻れたバベル(hutinoatari.dev)</a></li>
