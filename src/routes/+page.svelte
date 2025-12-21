@@ -49,10 +49,10 @@
 <section class="bg-gray-100 m-4 p-4 pixel-section dark:bg-gray-800 dark:text-white">
 	<h2 class="text-2xl text-main font-bold mb-4">Blog & SNS</h2>
 	<div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
-		<PixelNavBtn href="/blog" class="text-center">Blog</PixelNavBtn>
-		<PixelNavBtn href="https://www.instagram.com/lnln_ch" class="text-center">Instagram</PixelNavBtn>
-		<PixelNavBtn href="https://discordapp.com/users/316944552789540875" class="text-center">Discord</PixelNavBtn>
-		<PixelNavBtn href="https://github.com/ybasviel" class="text-center">GitHub</PixelNavBtn>
+		<PixelNavBtn href="/blog" class="text-center mx-auto w-32">Blog</PixelNavBtn>
+		<PixelNavBtn href="https://www.instagram.com/lnln_ch" class="text-center mx-auto w-32">Instagram</PixelNavBtn>
+		<PixelNavBtn href="https://discordapp.com/users/316944552789540875" class="text-center mx-auto w-32">Discord</PixelNavBtn>
+		<PixelNavBtn href="https://github.com/ybasviel" class="text-center mx-auto w-32">GitHub</PixelNavBtn>
 	</div>
 </section>
 
