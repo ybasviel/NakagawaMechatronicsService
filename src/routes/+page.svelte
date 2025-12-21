@@ -1,5 +1,7 @@
 <script lang="ts">
 	import type { PageData } from './$types';
+	import { pixelBurst } from '$lib/attachments/pixelBurst';
+	import PixelNavBtn from '$lib/components/PixelNavBtn.svelte';
 
 	let { data }: { data: PageData } = $props();
 </script>
@@ -18,7 +20,7 @@
 	<div class="flex flex-wrap justify-evenly gap-4">
 		{#each data.works as work}
 			<div class="w-96 m-2">
-				<a href="/works/{work.id}">
+				<a href="/works/{work.id}" {@attach pixelBurst({ autoRadius: true, particleCount: 16 })}>
 					{#if work.thumbnail}
 						<img
 							src={work.thumbnail.url}
@@ -32,7 +34,7 @@
 					{/if}
 				</a>
 				<h3 class="mt-2 text-xl font-bold text-center text-cyan-600">
-					<a href="/works/{work.id}" class="hover:underline">{work.title}</a>
+					<a href="/works/{work.id}" class="hover:underline" {@attach pixelBurst({ autoRadius: true })}>{work.title}</a>
 				</h3>
 				{#if work.description}
 					<p class="p-2 text-sm">{work.description}</p>
@@ -46,10 +48,10 @@
 <section class="bg-gray-100 m-4 p-4 pixel-section dark:bg-gray-800 dark:text-white">
 	<h2 class="text-2xl text-main font-bold mb-4">Blog & SNS</h2>
 	<div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
-		<a class="pixel-nav-btn text-center" href="/blog">Blog</a>
-		<a class="pixel-nav-btn text-center" href="https://www.instagram.com/lnln_ch" target="_blank" rel="noopener noreferrer">Instagram</a>
-		<a class="pixel-nav-btn text-center" href="https://discordapp.com/users/316944552789540875" target="_blank" rel="noopener noreferrer">Discord</a>
-		<a class="pixel-nav-btn text-center" href="https://github.com/ybasviel" target="_blank" rel="noopener noreferrer">GitHub</a>
+		<PixelNavBtn href="/blog" class="text-center">Blog</PixelNavBtn>
+		<PixelNavBtn href="https://www.instagram.com/lnln_ch" class="text-center">Instagram</PixelNavBtn>
+		<PixelNavBtn href="https://discordapp.com/users/316944552789540875" class="text-center">Discord</PixelNavBtn>
+		<PixelNavBtn href="https://github.com/ybasviel" class="text-center">GitHub</PixelNavBtn>
 	</div>
 </section>
 

@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { PageData } from './$types';
+	import PixelNavBtn from '$lib/components/PixelNavBtn.svelte';
 
 	let { data }: { data: PageData } = $props();
 </script>
@@ -17,7 +18,7 @@
 
 <div class="m-4">
 	<div class="my-4 flex gap-4 max-w-screen-lg mx-auto">
-		<a class="pixel-nav-btn" href="/">Home</a>
+		<PixelNavBtn href="/">Home</PixelNavBtn>
 	</div>
 
 	<section class="bg-gray-100 my-4 p-4 pixel-section dark:bg-gray-800 dark:text-white">
@@ -26,4 +27,3 @@
 		</article>
 	</section>
 </div>
-

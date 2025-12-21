@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { PageData } from './$types';
+	import PixelNavBtn from '$lib/components/PixelNavBtn.svelte';
 
 	let { data }: { data: PageData } = $props();
 
@@ -23,8 +24,8 @@
 <div class="m-4">
 	<div class="flex justify-between items-center my-4 max-w-screen-lg mx-auto">
 		<div class="flex gap-4">
-			<a class="pixel-nav-btn" href="/">Home</a>
-			<a class="pixel-nav-btn" href="/blog">Blog</a>
+			<PixelNavBtn href="/">Home</PixelNavBtn>
+			<PixelNavBtn href="/blog">Blog</PixelNavBtn>
 		</div>
 		<div class="mr-6 text-gray-400">{formatDate(data.blog.publishedAt)}</div>
 	</div>
@@ -35,4 +36,3 @@
 		</article>
 	</section>
 </div>
-
