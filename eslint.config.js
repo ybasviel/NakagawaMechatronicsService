@@ -33,6 +33,11 @@ export default defineConfig(
 				parser: ts.parser,
 				svelteConfig
 			}
+		},
+
+		rules: {
+			// CMSからのHTMLコンテンツを表示するため警告に留める
+			'svelte/no-at-html-tags': 'warn'
 		}
 	}
 );
