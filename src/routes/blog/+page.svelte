@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { PageData } from './$types';
+	import { resolveRoute } from '$app/paths';
 	import PixelNavBtn from '$lib/components/PixelNavBtn.svelte';
 
 	let { data }: { data: PageData } = $props();
@@ -27,7 +28,7 @@
 		<div class="max-w-screen-lg mx-auto">
 			<h2 class="text-2xl text-main font-bold mb-4">最新3件のブログ</h2>
 			<ul class="list-disc m-4">
-				{#each data.latestBlogs as blog}
+				{#each data.latestBlogs as blog (blog.id)}
 					<li>
 						<a href="/blog/{blog.id}" class="text-cyan-600 hover:underline">
 							{blog.title} - {formatDate(blog.publishedAt)}
@@ -42,11 +43,11 @@
 		<div class="max-w-screen-lg mx-auto">
 			<h2 class="text-2xl text-main font-bold mb-4">月別アーカイブ</h2>
 			<div class="ml-2">
-				{#each Object.entries(data.archive) as [yearMonth, blogs]}
+				{#each Object.entries(data.archive) as [yearMonth, blogs] (yearMonth)}
 					<details class="cursor-pointer mb-2">
 						<summary class="font-medium">{yearMonth}</summary>
 						<ul class="ml-6 mt-1">
-							{#each blogs as blog}
+							{#each blogs as blog (blog.id)}
 								<li class="my-1">
 									<a href="/blog/{blog.id}" class="text-cyan-600 hover:underline">
 										{blog.title} - {formatDate(blog.publishedAt)}

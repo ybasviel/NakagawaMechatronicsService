@@ -18,7 +18,7 @@
 <section class="bg-gray-100 m-4 p-4 pixel-section dark:bg-gray-800 dark:text-white">
 	<h2 class="text-2xl text-main font-bold mb-4">Works</h2>
 	<div class="flex flex-wrap justify-evenly gap-4">
-		{#each data.works as work}
+		{#each data.works as work (work.id)}
 			<div class="w-96 m-2">
 				<a href="/works/{work.id}" {@attach pixelBurst({ autoRadius: true, particleCount: 16 })}>
 					{#if work.thumbnail}

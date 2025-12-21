@@ -12,8 +12,6 @@ export interface PixelBurstOptions {
 	navigate?: boolean; // trueの場合、エフェクト後にリンク先に遷移
 }
 
-let particleId = 0;
-
 // パーティクルのスタイルを注入
 function injectStyles() {
 	if (document.getElementById('pixel-burst-styles')) return;
@@ -80,7 +78,6 @@ function createBurst(centerX: number, centerY: number, options: PixelBurstOption
 
 		document.body.appendChild(particle);
 
-		const id = particleId++;
 		window.setTimeout(() => {
 			particle.remove();
 		}, duration + delay + 100);
