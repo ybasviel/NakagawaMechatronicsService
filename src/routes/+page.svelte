@@ -81,6 +81,7 @@
 		<PixelNavBtn href="https://www.instagram.com/lnln_ch" class="text-center mx-auto w-32">Instagram</PixelNavBtn>
 		<PixelNavBtn href="https://discordapp.com/users/316944552789540875" class="text-center mx-auto w-32">Discord</PixelNavBtn>
 		<PixelNavBtn href="https://github.com/ybasviel" class="text-center mx-auto w-32">GitHub</PixelNavBtn>
+		<PixelNavBtn href="https://www.printables.com/@ybasviel_1999413" class="text-center mx-auto w-32">Printables</PixelNavBtn>
 	</div>
 </section>
 
