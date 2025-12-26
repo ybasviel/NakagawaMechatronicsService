@@ -84,19 +84,3 @@
 	</div>
 </section>
 
-<!-- Links Section -->
-<section class="bg-gray-100 m-4 p-4 pixel-section dark:bg-gray-800 dark:text-white">
-	<h2 class="text-2xl text-main font-bold mb-4">Links</h2>
-	<div class="leading-relaxed text-base">
-		<p class="mb-4">大学の知り合いのサイトを紹介</p>
-	</div>
-	<ul class="list-disc ml-7 my-4">
-		<li><a href="https://gotti.dev" class="text-cyan-600 hover:underline" target="_blank" rel="noopener noreferrer">ごっち(gotti.dev)</a></li>
-		<li><a href="https://azukibar.dev" class="text-cyan-600 hover:underline" target="_blank" rel="noopener noreferrer">アイスの棒(azukibar.dev)</a></li>
-		<li><a href="https://www.hutinoatari.dev/" class="text-cyan-600 hover:underline" target="_blank" rel="noopener noreferrer">捻れたバベル(hutinoatari.dev)</a></li>
-		<li><a href="https://mocchan.dev" class="text-cyan-600 hover:underline" target="_blank" rel="noopener noreferrer">Lunatic電通生もっちゃんの部屋(mocchan.dev)</a></li>
-		<li><a href="https://elmer9.github.io/" class="text-cyan-600 hover:underline" target="_blank" rel="noopener noreferrer">ファンサイト(elmer9.github.io)</a></li>
-		<li><a href="https://helkun.dev/" class="text-cyan-600 hover:underline" target="_blank" rel="noopener noreferrer">へる破壊財団(helkun.dev)</a></li>
-		<li><a href="https://yuino.dev/" class="text-cyan-600 hover:underline" target="_blank" rel="noopener noreferrer">ゆいのページ(yuino.dev)</a></li>
-	</ul>
-</section>
