@@ -6,6 +6,19 @@
 	--font-sans: 'DotGothic16', cursive;
 }
 
+/* Base background colors for html/body */
+html,
+body {
+	background-color: white;
+}
+
+@media (prefers-color-scheme: dark) {
+	html,
+	body {
+		background-color: black;
+	}
+}
+
 /* Pixel Art Style */
 * {
 	image-rendering: pixelated;
@@ -24,9 +37,11 @@
 	box-shadow: 6px 6px 0px #374151;
 }
 
-:global(.dark) .pixel-section {
-	border-color: #9ca3af;
-	box-shadow: 6px 6px 0px #9ca3af;
+@media (prefers-color-scheme: dark) {
+	.pixel-section {
+		border-color: #9ca3af;
+		box-shadow: 6px 6px 0px #9ca3af;
+	}
 }
 
 /* Pixel header/footer style */
@@ -50,9 +65,11 @@ img {
 	box-shadow: 4px 4px 0px #374151;
 }
 
-:global(.dark) img {
-	border-color: #9ca3af;
-	box-shadow: 4px 4px 0px #9ca3af;
+@media (prefers-color-scheme: dark) {
+	img {
+		border-color: #9ca3af;
+		box-shadow: 4px 4px 0px #9ca3af;
+	}
 }
 
 /* Pixel button press effect for work thumbnails */
@@ -67,13 +84,15 @@ img {
 	box-shadow: 0px 0px 0px #374151;
 }
 
-:global(.dark) .pixel-pressable {
-	border-color: #9ca3af;
-	box-shadow: 4px 4px 0px #9ca3af;
-}
+@media (prefers-color-scheme: dark) {
+	.pixel-pressable {
+		border-color: #9ca3af;
+		box-shadow: 4px 4px 0px #9ca3af;
+	}
 
-:global(.dark) .pixel-pressable:hover {
-	box-shadow: 0px 0px 0px #9ca3af;
+	.pixel-pressable:hover {
+		box-shadow: 0px 0px 0px #9ca3af;
+	}
 }
 
 /* Pixel navigation button */
