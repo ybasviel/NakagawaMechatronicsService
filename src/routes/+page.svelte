@@ -76,6 +76,8 @@
 	<h2 class="text-2xl text-main font-bold mb-4">Blog & SNS</h2>
 	<div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
 		<PixelNavBtn href="/blog" class="text-center mx-auto w-32">Blog</PixelNavBtn>
+		<PixelNavBtn href="https://lnln.dev" class="text-center mx-auto w-32">lnln.dev</PixelNavBtn>
+		<PixelNavBtn href="https://x.com/lnln_ch" class="text-center mx-auto w-32">Twitter</PixelNavBtn>
 		<PixelNavBtn href="https://www.instagram.com/lnln_ch" class="text-center mx-auto w-32">Instagram</PixelNavBtn>
 		<PixelNavBtn href="https://discordapp.com/users/316944552789540875" class="text-center mx-auto w-32">Discord</PixelNavBtn>
 		<PixelNavBtn href="https://github.com/ybasviel" class="text-center mx-auto w-32">GitHub</PixelNavBtn>
