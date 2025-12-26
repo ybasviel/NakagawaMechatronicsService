@@ -20,7 +20,7 @@
 	<h2 class="text-2xl text-main font-bold mb-4">About</h2>
 	<div class="leading-relaxed text-base">
 		<p>
-			なかがわ電機サービスは、<a href="https://x.com/lnln_ch" class="text-cyan-600 hover:underline" target="_blank" rel="noopener noreferrer">@lnln_ch</a>が運営する個人のものづくりサークルです。
+			なかがわ電機サービスは、<a href="https://lnln.dev" class="text-cyan-600 hover:underline" target="_blank" rel="noopener noreferrer">lnln.dev</a>が運営する個人のものづくりサークルです。
 		</p>
 	</div>
 </section>

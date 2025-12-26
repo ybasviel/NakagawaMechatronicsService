@@ -20,6 +20,6 @@
 	</main>
 
 	<footer class="m-4 px-4 py-2 pixel-header bg-main text-white">
-		Made by lnln_ch
+		(C) 2025 lnln.dev
 	</footer>
 </div>
