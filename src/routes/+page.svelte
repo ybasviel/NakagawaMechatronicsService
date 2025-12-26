@@ -58,12 +58,13 @@
 
 <!-- Activity Section -->
 <section class="bg-gray-100 m-4 p-4 pixel-section dark:bg-gray-800 dark:text-white">
-	<h2 class="text-2xl text-main font-bold mb-4">Activity</h2>
+	<h2 class="text-2xl text-main font-bold mb-4">Activities</h2>
 	<div class="leading-relaxed text-base">
 		<ul class="list-disc ml-7 my-4">
 			<li>NT東京2023</li>
 			<li>NT東京2024</li>
 			<li>NT金沢2025: 電気通信大学工学研究部と共同出展</li>
+			<li>U☆PoC～UECアイディア実証コンテスト2025～: 奨励賞,濱坂賞賞,トゥモロー・ネット賞, EATEC賞</li>
 			<li>技書博12: 黒暗児童遊園委託</li>
 			<li>電気通信大学 第75回 調布祭</li>
 		</ul>
