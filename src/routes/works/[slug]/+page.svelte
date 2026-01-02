@@ -1,6 +1,8 @@
 <script lang="ts">
 	import type { PageData } from './$types';
 	import PixelNavBtn from '$lib/components/PixelNavBtn.svelte';
+	import PixelTweetBtn from '$lib/components/PixelTweetBtn.svelte';
+	import { page } from '$app/state';
 
 	let { data }: { data: PageData } = $props();
 </script>
@@ -26,4 +28,7 @@
 			{@html data.work.content}
 		</article>
 	</section>
+	<div class="max-w-screen-lg mx-auto mt-6 flex justify-center">
+		<PixelTweetBtn title={data.work.title} pathname={page.url.pathname} />
+	</div>
 </div>
