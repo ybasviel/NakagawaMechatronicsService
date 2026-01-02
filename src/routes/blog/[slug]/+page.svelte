@@ -2,6 +2,7 @@
 	import type { PageData } from './$types';
 	import PixelNavBtn from '$lib/components/PixelNavBtn.svelte';
 	import PixelTweetBtn from '$lib/components/PixelTweetBtn.svelte';
+	import PixelWebShareBtn from '$lib/components/PixelWebShareBtn.svelte';
 	import { page } from '$app/state';
 
 	let { data }: { data: PageData } = $props();
@@ -37,7 +38,8 @@
 			{@html data.blog.content}
 		</article>
 	</section>
-	<div class="max-w-screen-lg mx-auto mt-6 flex justify-center">
+	<div class="max-w-screen-lg mx-auto mt-6 flex justify-center gap-4">
 		<PixelTweetBtn title={data.blog.title} pathname={page.url.pathname} />
+		<PixelWebShareBtn title={data.blog.title} pathname={page.url.pathname} />
 	</div>
 </div>
