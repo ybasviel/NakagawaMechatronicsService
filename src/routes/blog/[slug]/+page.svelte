@@ -15,7 +15,7 @@
 	<meta name="twitter:card" content={data.blog.thumbnail ? 'summary_large_image' : 'summary'} />
 	<meta property="og:url" content="https://nms.lnln.dev/blog/{data.blog.id}" />
 	<meta property="og:title" content={data.blog.title} />
-	<meta property="og:description" content="趣味の工作の記録" />
+	<meta property="og:description" content="なかがわ電機サービスの雑多なブログ" />
 	{#if data.blog.thumbnail}
 		<meta property="og:image" content={data.blog.thumbnail.url} />
 	{/if}
