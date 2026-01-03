@@ -20,22 +20,25 @@
 	);
 
 	async function handleShare(): Promise<void> {
-		if (!browser || !navigator.share) return;
+		// pixelBurstのエフェクトが終わったら共有を実行
+		setTimeout(async () => {
+			if (!browser || !navigator.share) return;
 
-		const url = `https://nms.lnln.dev${pathname}`;
-		const shareData: ShareData = {
-            text: `${title} | なかがわ電機サービス`,
-			url: url
-		};
+			const url = `https://nms.lnln.dev${pathname}`;
+			const shareData: ShareData = {
+				text: `${title} | なかがわ電機サービス`,
+				url: url
+			};
 
-		try {
-			await navigator.share(shareData);
-		} catch (error) {
-			// ユーザーが共有をキャンセルした場合などはエラーを無視
-			if (error instanceof Error && error.name !== 'AbortError') {
-				console.error('共有に失敗しました:', error);
+			try {
+				await navigator.share(shareData);
+			} catch (error) {
+				// ユーザーが共有をキャンセルした場合などはエラーを無視
+				if (error instanceof Error && error.name !== 'AbortError') {
+					console.error('共有に失敗しました:', error);
+				}
 			}
-		}
+		}, 400);
 	}
 </script>
 
