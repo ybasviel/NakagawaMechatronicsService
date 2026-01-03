@@ -27,17 +27,73 @@
 	rel="noopener noreferrer"
 	{@attach pixelBurst(resolvedOptions)}
 >
-	<svg
-		xmlns="http://www.w3.org/2000/svg"
-		width="16"
-		height="16"
-		viewBox="0 0 24 24"
-		fill="currentColor"
-		style="display: inline-block; vertical-align: middle; margin-right: 0.25rem;"
-	>
-		<path
-			d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
-		/>
-	</svg>
-	ツイート
+	<div class="flex items-center gap-2">
+		<svg 
+			width="30" height="30" 
+			viewBox="0 0 15 15" 
+			xmlns="http://www.w3.org/2000/svg"
+			class="flex shrink-0 justify-center items-center"
+			fill="currentColor"
+		>
+			<rect x="2" y="3" width="1" height="1"/>
+			<rect x="9" y="3" width="1" height="1"/>
+			<rect x="10" y="3" width="1" height="1"/>
+			<rect x="2" y="4" width="1" height="1"/>
+			<rect x="3" y="4" width="1" height="1"/>
+			<rect x="8" y="4" width="1" height="1"/>
+			<rect x="9" y="4" width="1" height="1"/>
+			<rect x="10" y="4" width="1" height="1"/>
+			<rect x="11" y="4" width="1" height="1"/>
+			<rect x="12" y="4" width="1" height="1"/>
+			<rect x="3" y="5" width="1" height="1"/>
+			<rect x="4" y="5" width="1" height="1"/>
+			<rect x="7" y="5" width="1" height="1"/>
+			<rect x="8" y="5" width="1" height="1"/>
+			<rect x="9" y="5" width="1" height="1"/>
+			<rect x="10" y="5" width="1" height="1"/>
+			<rect x="11" y="5" width="1" height="1"/>
+			<rect x="3" y="6" width="1" height="1"/>
+			<rect x="4" y="6" width="1" height="1"/>
+			<rect x="5" y="6" width="1" height="1"/>
+			<rect x="6" y="6" width="1" height="1"/>
+			<rect x="7" y="6" width="1" height="1"/>
+			<rect x="8" y="6" width="1" height="1"/>
+			<rect x="9" y="6" width="1" height="1"/>
+			<rect x="10" y="6" width="1" height="1"/>
+			<rect x="11" y="6" width="1" height="1"/>
+			<rect x="3" y="7" width="1" height="1"/>
+			<rect x="4" y="7" width="1" height="1"/>
+			<rect x="5" y="7" width="1" height="1"/>
+			<rect x="6" y="7" width="1" height="1"/>
+			<rect x="7" y="7" width="1" height="1"/>
+			<rect x="8" y="7" width="1" height="1"/>
+			<rect x="9" y="7" width="1" height="1"/>
+			<rect x="10" y="7" width="1" height="1"/>
+			<rect x="11" y="7" width="1" height="1"/>
+			<rect x="4" y="8" width="1" height="1"/>
+			<rect x="5" y="8" width="1" height="1"/>
+			<rect x="6" y="8" width="1" height="1"/>
+			<rect x="7" y="8" width="1" height="1"/>
+			<rect x="8" y="8" width="1" height="1"/>
+			<rect x="9" y="8" width="1" height="1"/>
+			<rect x="10" y="8" width="1" height="1"/>
+			<rect x="4" y="9" width="1" height="1"/>
+			<rect x="5" y="9" width="1" height="1"/>
+			<rect x="6" y="9" width="1" height="1"/>
+			<rect x="7" y="9" width="1" height="1"/>
+			<rect x="8" y="9" width="1" height="1"/>
+			<rect x="9" y="9" width="1" height="1"/>
+			<rect x="5" y="10" width="1" height="1"/>
+			<rect x="6" y="10" width="1" height="1"/>
+			<rect x="7" y="10" width="1" height="1"/>
+			<rect x="8" y="10" width="1" height="1"/>
+			<rect x="9" y="10" width="1" height="1"/>
+			<rect x="3" y="11" width="1" height="1"/>
+			<rect x="4" y="11" width="1" height="1"/>
+			<rect x="5" y="11" width="1" height="1"/>
+			<rect x="6" y="11" width="1" height="1"/>
+			<rect x="7" y="11" width="1" height="1"/>
+		</svg>
+		ツイート
+	</div>
 </a>

@@ -49,57 +49,59 @@
 		class="pixel-nav-btn {className}"
 		{@attach pixelBurst(resolvedOptions)}
 	>
-		<!-- https://www.dots.tolog.info/pixelarts/a773ef4b-4f4a-4e96-9fd2-c30e39a73b2b -->
-		<svg 
-		width="30" 
-		height="30" 
-		viewBox="0 0 150 150" 
-		fill="currentColor" 
-		xmlns="http://www.w3.org/2000/svg"
-		stroke="none"
-		style="display: inline-block; vertical-align: middle; margin-right: 0.25rem;"
-		>
-			<rect width="10" height="10" transform="matrix(-1 0 0 1 130 40)" />
-			<rect width="10" height="10" transform="matrix(-1 0 0 1 130 30)" />
-			<rect width="10" height="10" transform="matrix(-1 0 0 1 120 20)" />
-			<rect width="10" height="10" transform="matrix(-1 0 0 1 130 20)" />
-			<rect width="10" height="10" transform="matrix(-1 0 0 1 120 40)" />
-			<rect width="10" height="10" transform="matrix(-1 0 0 1 110 20)" />
-			<rect width="10" height="10" transform="matrix(-1 0 0 1 30 80)" />
-			<rect width="10" height="10" transform="matrix(-1 0 0 1 30 60)" />
-			<rect width="10" height="10" transform="matrix(-1 0 0 1 40 60)" />
-			<rect width="10" height="10" transform="matrix(-1 0 0 1 70 70)" />
-			<rect width="10" height="10" transform="matrix(-1 0 0 1 80 90)" />
-			<rect width="10" height="10" transform="matrix(-1 0 0 1 80 80)" />
-			<rect width="10" height="10" transform="matrix(-1 0 0 1 90 30)" />
-			<rect width="10" height="10" transform="matrix(-1 0 0 1 100 30)" />
-			<rect width="10" height="10" transform="matrix(-1 0 0 1 100 110)" />
-			<rect width="10" height="10" transform="matrix(-1 0 0 1 110 30)" />
-			<rect width="10" height="10" transform="matrix(-1 0 0 1 80 40)" />
-			<rect width="10" height="10" transform="matrix(-1 0 0 1 80 30)" />
-			<rect width="10" height="10" transform="matrix(-1 0 0 1 110 40)" />
-			<rect width="10" height="10" transform="matrix(-1 0 0 1 130 120)" />
-			<rect width="10" height="10" transform="matrix(-1 0 0 1 130 110)" />
-			<rect width="10" height="10" transform="matrix(-1 0 0 1 120 100)" />
-			<rect width="10" height="10" transform="matrix(-1 0 0 1 130 100)" />
-			<rect width="10" height="10" transform="matrix(-1 0 0 1 120 120)" />
-			<rect width="10" height="10" transform="matrix(-1 0 0 1 110 100)" />
-			<rect width="10" height="10" transform="matrix(-1 0 0 1 110 110)" />
-			<rect width="10" height="10" transform="matrix(-1 0 0 1 110 120)" />
-			<rect width="10" height="10" transform="matrix(-1 0 0 1 60 70)" />
-			<rect width="10" height="10" transform="matrix(-1 0 0 1 80 50)" />
-			<rect width="10" height="10" transform="matrix(-1 0 0 1 80 60)" />
-			<rect width="10" height="10" transform="matrix(-1 0 0 1 80 70)" />
-			<rect width="10" height="10" transform="matrix(-1 0 0 1 80 100)" />
-			<rect width="10" height="10" transform="matrix(-1 0 0 1 80 110)" />
-			<rect width="10" height="10" transform="matrix(-1 0 0 1 90 110)" />
-			<rect width="10" height="10" transform="matrix(-1 0 0 1 40 80)" />
-			<rect width="10" height="10" transform="matrix(-1 0 0 1 30 70)" />
-			<rect width="10" height="10" transform="matrix(-1 0 0 1 50 80)" />
-			<rect width="10" height="10" transform="matrix(-1 0 0 1 50 60)" />
-			<rect width="10" height="10" transform="matrix(-1 0 0 1 50 70)" />
-		</svg>
-			
-		共有
+		<div class="flex items-center gap-2">
+			<!-- https://www.dots.tolog.info/pixelarts/a773ef4b-4f4a-4e96-9fd2-c30e39a73b2b -->
+			<svg 
+			width="30" 
+			height="30"
+			viewBox="0 0 150 150" 
+			fill="currentColor" 
+			xmlns="http://www.w3.org/2000/svg"
+			stroke="none"
+			class="flex shrink-0 justify-center items-center"
+			>
+				<rect width="10" height="10" transform="matrix(-1 0 0 1 130 40)" />
+				<rect width="10" height="10" transform="matrix(-1 0 0 1 130 30)" />
+				<rect width="10" height="10" transform="matrix(-1 0 0 1 120 20)" />
+				<rect width="10" height="10" transform="matrix(-1 0 0 1 130 20)" />
+				<rect width="10" height="10" transform="matrix(-1 0 0 1 120 40)" />
+				<rect width="10" height="10" transform="matrix(-1 0 0 1 110 20)" />
+				<rect width="10" height="10" transform="matrix(-1 0 0 1 30 80)" />
+				<rect width="10" height="10" transform="matrix(-1 0 0 1 30 60)" />
+				<rect width="10" height="10" transform="matrix(-1 0 0 1 40 60)" />
+				<rect width="10" height="10" transform="matrix(-1 0 0 1 70 70)" />
+				<rect width="10" height="10" transform="matrix(-1 0 0 1 80 90)" />
+				<rect width="10" height="10" transform="matrix(-1 0 0 1 80 80)" />
+				<rect width="10" height="10" transform="matrix(-1 0 0 1 90 30)" />
+				<rect width="10" height="10" transform="matrix(-1 0 0 1 100 30)" />
+				<rect width="10" height="10" transform="matrix(-1 0 0 1 100 110)" />
+				<rect width="10" height="10" transform="matrix(-1 0 0 1 110 30)" />
+				<rect width="10" height="10" transform="matrix(-1 0 0 1 80 40)" />
+				<rect width="10" height="10" transform="matrix(-1 0 0 1 80 30)" />
+				<rect width="10" height="10" transform="matrix(-1 0 0 1 110 40)" />
+				<rect width="10" height="10" transform="matrix(-1 0 0 1 130 120)" />
+				<rect width="10" height="10" transform="matrix(-1 0 0 1 130 110)" />
+				<rect width="10" height="10" transform="matrix(-1 0 0 1 120 100)" />
+				<rect width="10" height="10" transform="matrix(-1 0 0 1 130 100)" />
+				<rect width="10" height="10" transform="matrix(-1 0 0 1 120 120)" />
+				<rect width="10" height="10" transform="matrix(-1 0 0 1 110 100)" />
+				<rect width="10" height="10" transform="matrix(-1 0 0 1 110 110)" />
+				<rect width="10" height="10" transform="matrix(-1 0 0 1 110 120)" />
+				<rect width="10" height="10" transform="matrix(-1 0 0 1 60 70)" />
+				<rect width="10" height="10" transform="matrix(-1 0 0 1 80 50)" />
+				<rect width="10" height="10" transform="matrix(-1 0 0 1 80 60)" />
+				<rect width="10" height="10" transform="matrix(-1 0 0 1 80 70)" />
+				<rect width="10" height="10" transform="matrix(-1 0 0 1 80 100)" />
+				<rect width="10" height="10" transform="matrix(-1 0 0 1 80 110)" />
+				<rect width="10" height="10" transform="matrix(-1 0 0 1 90 110)" />
+				<rect width="10" height="10" transform="matrix(-1 0 0 1 40 80)" />
+				<rect width="10" height="10" transform="matrix(-1 0 0 1 30 70)" />
+				<rect width="10" height="10" transform="matrix(-1 0 0 1 50 80)" />
+				<rect width="10" height="10" transform="matrix(-1 0 0 1 50 60)" />
+				<rect width="10" height="10" transform="matrix(-1 0 0 1 50 70)" />
+			</svg>
+				
+			共有
+		</div>
 	</button>
 {/if}
