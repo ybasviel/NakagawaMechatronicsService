@@ -21,6 +21,7 @@
 	<meta property="og:description" content="なかがわ電機サービスの雑多なブログ" />
 	{#if data.blog.thumbnail}
 		<meta property="og:image" content={data.blog.thumbnail.url} />
+		<meta name="twitter:image" content={data.blog.thumbnail.url} />
 	{/if}
 </svelte:head>
 

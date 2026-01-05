@@ -16,6 +16,7 @@
 	<meta property="og:description" content={data.work.description || '趣味の工作の記録'} />
 	{#if data.work.thumbnail}
 		<meta property="og:image" content={data.work.thumbnail.url} />
+		<meta name="twitter:image" content={data.work.thumbnail.url} />
 	{/if}
 </svelte:head>
 
