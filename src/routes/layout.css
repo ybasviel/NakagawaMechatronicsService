@@ -48,14 +48,62 @@ a {
 	transition: transform 0.1s ease-in-out;
 }
 
-a:hover {
+a:hover,
+a:focus-visible {
 	transform: translate(-2px, -2px);
 }
 
+/* Keyboard (Tab) focus ring — chunky dashed "pixel-art" outline in the site's
+   orange, held a few pixels off the border so it doesn't crowd the button edge.
+   Only shows for keyboard navigation, not mouse clicks. */
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible,
+[tabindex]:focus-visible {
+	outline: 4px dashed var(--color-main);
+	outline-offset: 4px;
+}
+
 /* Work card links wrap the image + title; the image already has its own
-   press effect, so suppress the anchor's own hover shift to avoid a conflicting motion. */
-.work-card-link:hover {
-	transform: none;
+   press effect, so suppress the anchor's own hover shift to avoid a conflicting motion.
+   position: relative anchors the ::after focus ring. */
+.work-card-link {
+	position: relative;
+}
+
+/* Press the whole card as one unit — translate on the anchor (like .pixel-nav-btn)
+   plus the thumbnail's shadow collapse below. Because the ::after focus ring is a
+   child of the anchor, it moves together with the pressed content instead of the
+   image sliding out from under a static ring. */
+.work-card-link:hover,
+.work-card-link:focus-visible {
+	transform: translate(4px, 4px);
+}
+
+/* Pixel-art focus ring, even 6px gap on all sides. The anchor has no border,
+   so a plain -6px inset yields a 6px gap around the card. */
+.work-card-link:focus-visible {
+	outline: none;
+}
+
+.work-card-link:focus-visible::after {
+	content: '';
+	position: absolute;
+	inset: -6px;
+	border: 4px dashed var(--color-main);
+	box-sizing: border-box;
+	pointer-events: none;
+}
+
+/* Collapse the thumbnail's drop shadow so it reads as pressed; the translate now
+   comes from the anchor above, keeping ring and image in lockstep. */
+.work-card-link:hover .pixel-pressable,
+.work-card-link:focus-visible .pixel-pressable {
+	box-shadow: 0px 0px 0px #374151;
+}
+
+.work-card-link:focus-visible h3 {
+	text-decoration: underline;
 }
 
 /* Pixel-style images */
@@ -71,14 +119,10 @@ img {
 	transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
 }
 
-.pixel-pressable:hover {
-	transform: translate(4px, 4px);
-	box-shadow: 0px 0px 0px #374151;
-}
-
 /* Pixel navigation button */
 .pixel-nav-btn {
 	display: inline-block;
+	position: relative; /* anchors the ::after focus ring */
 	padding: 0.5rem 1rem;
 	background-color: #0891b2;
 	color: white;
@@ -87,10 +131,27 @@ img {
 	transition: transform 0.1s ease-in-out, box-shadow 0.1s ease-in-out;
 }
 
-.pixel-nav-btn:hover {
+.pixel-nav-btn:hover,
+.pixel-nav-btn:focus-visible {
 	transform: translate(4px, 4px);
 	box-shadow: 0px 0px 0px #0e7490;
 	text-decoration: none;
+}
+
+/* Pixel-art focus ring, even 6px gap on all sides — matching .work-card-link.
+   The ::after is positioned from the padding box (inside the 4px border), so the
+   inset is -(6px gap + 4px border) = -10px to land 6px outside the visible edge. */
+.pixel-nav-btn:focus-visible {
+	outline: none;
+}
+
+.pixel-nav-btn:focus-visible::after {
+	content: '';
+	position: absolute;
+	inset: -10px;
+	border: 4px dashed var(--color-main);
+	box-sizing: border-box;
+	pointer-events: none;
 }
 
 /* Prose styling for article content */
