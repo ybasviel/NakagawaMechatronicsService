@@ -52,6 +52,12 @@ a:hover {
 	transform: translate(-2px, -2px);
 }
 
+/* Work card links wrap the image + title; the image already has its own
+   press effect, so suppress the anchor's own hover shift to avoid a conflicting motion. */
+.work-card-link:hover {
+	transform: none;
+}
+
 /* Pixel-style images */
 img {
 	border: 4px solid #374151;

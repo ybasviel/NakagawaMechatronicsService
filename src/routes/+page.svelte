@@ -32,7 +32,12 @@
 	<div class="flex flex-wrap justify-evenly gap-4">
 		{#each data.works as work (work.id)}
 			<div class="w-96 m-2">
-				<a href="/works/{work.id}" {@attach pixelBurst({ autoRadius: true, particleCount: 16 })}>
+				<a
+					href="/works/{work.id}"
+					aria-label={work.title}
+					class="work-card-link group block"
+					{@attach pixelBurst({ autoRadius: true, particleCount: 16 })}
+				>
 					{#if work.thumbnail}
 						<img
 							src={work.thumbnail.url}
@@ -44,10 +49,10 @@
 							<span class="text-gray-500">No Image</span>
 						</div>
 					{/if}
+					<h3 class="mt-2 text-xl font-bold text-center text-cyan-600 group-hover:underline">
+						{work.title}
+					</h3>
 				</a>
-				<h3 class="mt-2 text-xl font-bold text-center text-cyan-600">
-					<a href="/works/{work.id}" class="hover:underline" {@attach pixelBurst({ autoRadius: true })}>{work.title}</a>
-				</h3>
 				{#if work.description}
 					<p class="p-2 text-sm">{work.description}</p>
 				{/if}
