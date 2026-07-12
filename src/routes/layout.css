@@ -7,6 +7,10 @@
 }
 
 /* Base background colors for html/body */
+html {
+	scroll-behavior: smooth;
+}
+
 html,
 body {
 	background-color: white;
@@ -259,4 +263,38 @@ img {
 	@apply w-full aspect-video;
 	border: 4px solid #374151;
 	box-shadow: 4px 4px 0px #374151;
+}
+
+/* Blog table of contents (desktop side pane) */
+.toc-panel {
+	scrollbar-width: thin;
+}
+
+.toc-item {
+	@apply my-1 leading-snug;
+	border-left: 2px solid transparent;
+}
+
+.toc-item a {
+	@apply text-cyan-700 dark:text-cyan-300 hover:underline;
+	display: block;
+	padding: 2px 6px;
+	word-break: break-word;
+}
+
+.toc-item a:hover,
+.toc-item a:focus-visible {
+	transform: none;
+}
+
+.toc-level-1 {
+	@apply font-bold;
+}
+
+.toc-level-1 a {
+	@apply text-main dark:text-main;
+}
+
+.toc-level-2 {
+	@apply font-semibold;
 }

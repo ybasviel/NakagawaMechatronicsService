@@ -4,13 +4,33 @@
 	import PixelTweetBtn from '$lib/components/PixelTweetBtn.svelte';
 	import PixelWebShareBtn from '$lib/components/PixelWebShareBtn.svelte';
 	import { page } from '$app/state';
+	import { onMount } from 'svelte';
 
 	let { data }: { data: PageData } = $props();
+
+	type TocItem = { id: string; text: string; level: number };
+	let toc: TocItem[] = $state([]);
+	let articleEl: HTMLElement | undefined = $state();
 
 	function formatDate(dateString: string): string {
 		const date = new Date(dateString);
 		return `${date.getFullYear()}/${String(date.getMonth() + 1).padStart(2, '0')}/${String(date.getDate()).padStart(2, '0')}`;
 	}
+
+	onMount(() => {
+		if (!articleEl) return;
+		const headings = articleEl.querySelectorAll<HTMLElement>('h1, h2, h3, h4');
+		const items: TocItem[] = [];
+		headings.forEach((h, i) => {
+			if (!h.id) h.id = `heading-${i}`;
+			items.push({
+				id: h.id,
+				text: h.textContent?.trim() ?? '',
+				level: Number(h.tagName.slice(1))
+			});
+		});
+		toc = items;
+	});
 </script>
 
 <svelte:head>
@@ -25,8 +45,8 @@
 	{/if}
 </svelte:head>
 
-<div class="m-4">
-	<div class="flex justify-between items-center my-4 max-w-screen-lg mx-auto">
+<div class="m-4 xl:max-w-[1400px] xl:mx-auto">
+	<div class="flex justify-between items-center my-4">
 		<div class="flex gap-4">
 			<PixelNavBtn href="/">Home</PixelNavBtn>
 			<PixelNavBtn href="/blog">Blog</PixelNavBtn>
@@ -34,11 +54,36 @@
 		<div class="mr-6 text-gray-400">{formatDate(data.blog.publishedAt)}</div>
 	</div>
 
-	<section class="bg-gray-100 my-4 p-4 pixel-section dark:bg-gray-800 dark:text-white">
-		<article class="prose max-w-screen-lg mx-auto">
-			{@html data.blog.content}
-		</article>
-	</section>
+	<div class="xl:grid xl:grid-cols-[200px_minmax(0,1fr)] xl:gap-6 xl:items-stretch">
+		<aside class="hidden xl:block">
+			{#if toc.length > 0}
+				<nav aria-label="目次" class="sticky top-4">
+					<div
+						class="pixel-section bg-gray-100 dark:bg-gray-800 dark:text-white p-4 max-h-[calc(100vh-2rem)] overflow-y-auto toc-panel"
+					>
+						<h2 class="font-bold mb-3 text-main text-lg">目次</h2>
+						<ul class="text-sm">
+							{#each toc as item (item.id)}
+								<li
+									class="toc-item toc-level-{item.level}"
+									style="padding-left: {(item.level - 1) * 0.75}rem"
+								>
+									<a href="#{item.id}">{item.text}</a>
+								</li>
+							{/each}
+						</ul>
+					</div>
+				</nav>
+			{/if}
+		</aside>
+
+		<section class="bg-gray-100 p-4 pixel-section dark:bg-gray-800 dark:text-white">
+			<article bind:this={articleEl} class="prose max-w-screen-lg mx-auto">
+				{@html data.blog.content}
+			</article>
+		</section>
+	</div>
+
 	<div class="max-w-screen-lg mx-auto mt-6 flex justify-center gap-4">
 		<PixelTweetBtn title={data.blog.title} pathname={page.url.pathname} />
 		<PixelWebShareBtn title={data.blog.title} pathname={page.url.pathname} />
