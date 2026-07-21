@@ -1,12 +1,12 @@
 import { readdir, readFile, writeFile, mkdir } from 'node:fs/promises';
-import { join, dirname, extname } from 'node:path';
+import { posix } from 'node:path';
 import { existsSync } from 'node:fs';
 import { createReadStream } from 'node:fs';
 import type { Plugin } from 'vite';
 
 const BUILD_DIR = 'build';
 const ASSETS_DIR = 'cms-assets';
-const URL_PATTERN = /https:\/\/images\.microcms-assets\.io\/assets\/[^\s"'<>)\]}`]+/g;
+const URL_PATTERN = /https:\/\/images\.microcms-assets\.io\/assets\/[^\s"'<>)\]}`\\]+/g;
 
 const MIME_TYPES: Record<string, string> = {
 	'.jpg': 'image/jpeg',
@@ -20,19 +20,19 @@ const MIME_TYPES: Record<string, string> = {
 
 function urlToLocalPath(url: string): string {
 	const u = new URL(url);
-	const pathWithoutAssets = u.pathname.replace(/^\/assets\//, '');
-	return join(ASSETS_DIR, pathWithoutAssets);
+	const pathWithoutAssets = u.pathname.replace(/^\/assets\//, '').replace(/\/+$/, '');
+	return posix.join(ASSETS_DIR, pathWithoutAssets);
 }
 
 async function collectFiles(dir: string): Promise<string[]> {
 	const entries = await readdir(dir, { withFileTypes: true, recursive: true });
 	return entries
 		.filter((e) => e.isFile() && (e.name.endsWith('.html') || e.name.endsWith('.json')))
-		.map((e) => join(e.parentPath ?? e.path, e.name));
+		.map((e) => posix.join(e.parentPath ?? e.path, e.name));
 }
 
 async function downloadImage(url: string, fullPath: string): Promise<boolean> {
-	await mkdir(dirname(fullPath), { recursive: true });
+	await mkdir(posix.dirname(fullPath), { recursive: true });
 	const res = await fetch(url);
 	if (!res.ok) {
 		console.error(`  Failed to download ${url}: ${res.status}`);
@@ -78,7 +78,7 @@ export function localizeImages(): Plugin {
 				let downloaded = 0;
 				const failed: string[] = [];
 				for (const [url, localPath] of urlMap) {
-					if (await downloadImage(url, join(BUILD_DIR, localPath))) {
+					if (await downloadImage(url, posix.join(BUILD_DIR, localPath))) {
 						downloaded++;
 					} else {
 						failed.push(url);
@@ -95,7 +95,7 @@ export function localizeImages(): Plugin {
 					let updated = content;
 					for (const [url, localPath] of urlMap) {
 						if (failed.includes(url)) continue;
-						updated = updated.replaceAll(url, '/' + localPath.replaceAll('\\', '/'));
+						updated = updated.replaceAll(url, '/' + localPath);
 					}
 					if (updated !== content) {
 						await writeFile(file, updated);
@@ -112,10 +112,10 @@ export function localizeImages(): Plugin {
 				const url = req.url;
 				if (!url?.startsWith(`/${ASSETS_DIR}/`)) return next();
 
-				const filePath = join(BUILD_DIR, decodeURIComponent(url));
+				const filePath = posix.join(BUILD_DIR, decodeURIComponent(url));
 				if (!existsSync(filePath)) return next();
 
-				const mime = MIME_TYPES[extname(filePath).toLowerCase()] ?? 'application/octet-stream';
+				const mime = MIME_TYPES[posix.extname(filePath).toLowerCase()] ?? 'application/octet-stream';
 				res.setHeader('Content-Type', mime);
 				res.setHeader('Cache-Control', 'public, max-age=31536000, immutable');
 				createReadStream(filePath).pipe(res);
