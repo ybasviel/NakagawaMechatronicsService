@@ -6,6 +6,7 @@ import type { Plugin } from 'vite';
 
 const BUILD_DIR = 'build';
 const ASSETS_DIR = 'cms-assets';
+const SITE_ORIGIN = 'https://nms.lnln.dev';
 const URL_PATTERN = /https:\/\/images\.microcms-assets\.io\/assets\/[^\s"'<>)\]}`\\]+/g;
 
 const MIME_TYPES: Record<string, string> = {
@@ -96,6 +97,12 @@ export function localizeImages(): Plugin {
 					for (const [url, localPath] of urlMap) {
 						if (failed.includes(url)) continue;
 						updated = updated.replaceAll(url, '/' + localPath);
+					}
+					if (file.endsWith('.html')) {
+						const OG_META_RE = /<meta\s[^>]*?(?:property="og:image"|name="twitter:image")[^>]*?>/g;
+						updated = updated.replace(OG_META_RE, (tag) =>
+							tag.replace(/content="(\/[^"]*)"/, `content="${SITE_ORIGIN}$1"`)
+						);
 					}
 					if (updated !== content) {
 						await writeFile(file, updated);
