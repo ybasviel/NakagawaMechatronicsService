@@ -160,7 +160,7 @@ img {
 
 /* Prose styling for article content */
 .prose h1 {
-	@apply text-3xl text-main font-bold mb-4;
+	@apply text-3xl text-main font-bold mb-4 mt-6;
 }
 
 .prose h1::before {

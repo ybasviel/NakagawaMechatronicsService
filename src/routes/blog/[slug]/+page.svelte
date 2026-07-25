@@ -102,7 +102,7 @@
 			</aside>
 
 			<section
-				class="bg-gray-100 p-4 pixel-section dark:bg-gray-800 dark:text-white xl:col-start-2 xl:row-start-2"
+				class="bg-gray-100 pb-4 px-4 pixel-section dark:bg-gray-800 dark:text-white xl:col-start-2 xl:row-start-2"
 			>
 				<article bind:this={articleEl} class="prose max-w-screen-lg mx-auto">
 					{@html data.blog.content}

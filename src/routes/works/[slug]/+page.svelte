@@ -25,7 +25,7 @@
 		<PixelNavBtn href="/">Home</PixelNavBtn>
 	</div>
 
-	<section class="bg-gray-100 my-4 p-4 pixel-section dark:bg-gray-800 dark:text-white">
+	<section class="bg-gray-100 my-4 pb-4 px-4 pixel-section dark:bg-gray-800 dark:text-white">
 		<article class="prose max-w-screen-lg mx-auto">
 			{@html data.work.content}
 		</article>
