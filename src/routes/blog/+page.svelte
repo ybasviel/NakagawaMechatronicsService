@@ -1,14 +1,10 @@
 <script lang="ts">
 	import type { PageData } from './$types';
-	import { resolveRoute } from '$app/paths';
 	import PixelNavBtn from '$lib/components/PixelNavBtn.svelte';
+	import PixelScrollRow from '$lib/components/PixelScrollRow.svelte';
+	import PixelBlogCard from '$lib/components/PixelBlogCard.svelte';
 
 	let { data }: { data: PageData } = $props();
-
-	function formatDate(dateString: string): string {
-		const date = new Date(dateString);
-		return `${date.getFullYear()}/${String(date.getMonth() + 1).padStart(2, '0')}/${String(date.getDate()).padStart(2, '0')}`;
-	}
 </script>
 
 <svelte:head>
@@ -25,40 +21,22 @@
 		<PixelNavBtn href="/">Home</PixelNavBtn>
 	</div>
 
-	<section class="bg-gray-100 my-4 p-4 pixel-section dark:bg-gray-800 dark:text-white">
-		<div class="max-w-screen-lg mx-auto">
-			<h2 class="text-2xl text-main font-bold mb-4">最新3件のブログ</h2>
-			<ul class="list-disc m-4">
-				{#each data.latestBlogs as blog (blog.id)}
-					<li>
-						<a href="/blog/{blog.id}" class="text-cyan-600 hover:underline">
-							{blog.title} - {formatDate(blog.publishedAt)}
-						</a>
-					</li>
-				{/each}
-			</ul>
-		</div>
-	</section>
-
-	<section class="bg-gray-100 my-4 p-4 pixel-section dark:bg-gray-800 dark:text-white">
-		<div class="max-w-screen-lg mx-auto">
-			<h2 class="text-2xl text-main font-bold mb-4">月別アーカイブ</h2>
-			<div class="ml-2">
-				{#each Object.entries(data.archive) as [yearMonth, blogs] (yearMonth)}
-					<details class="cursor-pointer mb-2">
-						<summary class="font-medium">{yearMonth}</summary>
-						<ul class="ml-6 mt-1">
-							{#each blogs as blog (blog.id)}
-								<li class="my-1">
-									<a href="/blog/{blog.id}" class="text-cyan-600 hover:underline">
-										{blog.title} - {formatDate(blog.publishedAt)}
-									</a>
-								</li>
-							{/each}
-						</ul>
-					</details>
-				{/each}
+	{#each data.years as { year, blogs } (year)}
+		<section class="bg-gray-100 my-4 p-4 pixel-section dark:bg-gray-800 dark:text-white">
+			<div class="max-w-screen-lg mx-auto">
+				<h2 class="text-2xl text-main font-bold mb-4">{year}年 <span class="text-base text-gray-500 dark:text-gray-400">({blogs.length}件)</span></h2>
+				<!-- 矢印はPC幅（横スクロール時）のみ。top はサムネイル中央 (p-2 + 16:9 の w-72 の半分) -->
+				<PixelScrollRow
+					class="grid grid-cols-1 sm:grid-cols-2 gap-8 p-2 lg:flex lg:overflow-x-auto lg:snap-x lg:scroll-px-2 lg:pb-6"
+					arrowTop="calc(0.5rem + 81px + 4px)"
+				>
+					{#each blogs as blog (blog.id)}
+						<div class="lg:w-72 lg:shrink-0 lg:snap-start">
+							<PixelBlogCard {blog} />
+						</div>
+					{/each}
+				</PixelScrollRow>
 			</div>
-		</div>
-	</section>
+		</section>
+	{/each}
 </div>
