@@ -1,7 +1,7 @@
 <script lang="ts">
 	import type { PageData } from './$types';
-	import { pixelBurst } from '$lib/attachments/pixelBurst';
 	import PixelNavBtn from '$lib/components/PixelNavBtn.svelte';
+	import PixelWorkCard from '$lib/components/PixelWorkCard.svelte';
 
 	let { data }: { data: PageData } = $props();
 </script>
@@ -31,31 +31,8 @@
 	<h2 class="text-2xl text-main font-bold mb-4">Works</h2>
 	<div class="flex flex-wrap justify-evenly gap-4">
 		{#each data.works as work (work.id)}
-			<div class="w-96 m-2">
-				<a
-					href="/works/{work.id}"
-					aria-label={work.title}
-					class="work-card-link group block"
-					{@attach pixelBurst({ autoRadius: true, particleCount: 16 })}
-				>
-					{#if work.thumbnail}
-						<img
-							src={work.thumbnail.url}
-							alt={work.title}
-							class="pixel-pressable w-full aspect-[4/3] object-cover"
-						/>
-					{:else}
-						<div class="pixel-pressable w-full aspect-[4/3] bg-gray-300 flex items-center justify-center">
-							<span class="text-gray-500">No Image</span>
-						</div>
-					{/if}
-					<h3 class="mt-2 text-xl font-bold text-center text-cyan-600 group-hover:underline">
-						{work.title}
-					</h3>
-				</a>
-				{#if work.description}
-					<p class="p-2 text-sm">{work.description}</p>
-				{/if}
+			<div class="w-72 m-2">
+				<PixelWorkCard {work} />
 			</div>
 		{/each}
 	</div>

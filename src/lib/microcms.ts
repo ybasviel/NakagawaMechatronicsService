@@ -1,4 +1,4 @@
-import { createClient, type MicroCMSQueries } from 'microcms-js-sdk';
+import { createClient, type GetAllContentRequest, type MicroCMSQueries } from 'microcms-js-sdk';
 import type { Work, Blog } from './types';
 import { MICROCMS_SERVICE_DOMAIN, MICROCMS_API_KEY } from '$env/static/private';
 
@@ -8,8 +8,9 @@ export const client = createClient({
 });
 
 // Works
-export async function getWorks(queries?: MicroCMSQueries) {
-	return await client.getList<Work>({
+// 全件取得（100件ごとに自動でページングされる）
+export async function getWorks(queries?: GetAllContentRequest['queries']) {
+	return await client.getAllContents<Work>({
 		endpoint: 'works',
 		queries: { ...queries, orders: '-publishedAt' }
 	});
@@ -24,8 +25,9 @@ export async function getWork(contentId: string, queries?: MicroCMSQueries) {
 }
 
 // Blogs
-export async function getBlogs(queries?: MicroCMSQueries) {
-	return await client.getList<Blog>({
+// 全件取得（100件ごとに自動でページングされる）
+export async function getBlogs(queries?: GetAllContentRequest['queries']) {
+	return await client.getAllContents<Blog>({
 		endpoint: 'blog',
 		queries: { ...queries, orders: '-publishedAt' }
 	});
