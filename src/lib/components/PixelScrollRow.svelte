@@ -47,12 +47,13 @@
 	<div bind:this={scroller} onscroll={update} class={className}>
 		{@render children()}
 	</div>
-
+	
 	{#if canLeft}
 		<button
 			type="button"
 			class="scroll-arrow left-0 -translate-x-1/2"
 			style:top={arrowTop}
+			tabindex="-1"
 			aria-label="左にスクロール"
 			onclick={() => scrollByPage(-1)}
 		>
@@ -64,6 +65,7 @@
 			type="button"
 			class="scroll-arrow right-0 translate-x-1/2 nudge"
 			style:top={arrowTop}
+			tabindex="-1"
 			aria-label="右にスクロール"
 			onclick={() => scrollByPage(1)}
 		>
