@@ -33,13 +33,15 @@
 	});
 </script>
 
-<!-- ドット絵の右向き三角（4×7ドット）。左向きは CSS で反転 -->
+<!-- ドット絵の右向き三角（4×7ドット）。左向きは SVG 内で反転（CSS の transform はアニメーションに使うため） -->
 {#snippet triangle(direction: 'left' | 'right')}
 	<svg class="triangle triangle-{direction}" viewBox="0 0 4 7" width="16" height="28" shape-rendering="crispEdges" aria-hidden="true">
-		<rect x="0" y="0" width="1" height="7" />
-		<rect x="1" y="1" width="1" height="5" />
-		<rect x="2" y="2" width="1" height="3" />
-		<rect x="3" y="3" width="1" height="1" />
+		<g transform={direction === 'left' ? 'matrix(-1 0 0 1 4 0)' : undefined}>
+			<rect x="0" y="0" width="1" height="7" />
+			<rect x="1" y="1" width="1" height="5" />
+			<rect x="2" y="2" width="1" height="3" />
+			<rect x="3" y="3" width="1" height="1" />
+		</g>
 	</svg>
 {/snippet}
 
@@ -63,7 +65,7 @@
 	{#if canRight}
 		<button
 			type="button"
-			class="scroll-arrow right-0 translate-x-1/2 nudge"
+			class="scroll-arrow right-0 translate-x-1/2"
 			style:top={arrowTop}
 			tabindex="-1"
 			aria-label="右にスクロール"
@@ -75,7 +77,6 @@
 </div>
 
 <style>
-	/* .pixel-nav-btn と同じ押し込み表現の正方形ボタン */
 	.scroll-arrow {
 		position: absolute;
 		margin-top: -1.5rem;
@@ -101,20 +102,17 @@
 
 	.triangle {
 		fill: white;
+		animation: nudge 1.6s steps(2, jump-none) infinite;
 	}
 
 	.triangle-right {
+		--nudge-x: 4px;
 		margin-left: 4px;
 	}
 
 	.triangle-left {
+		--nudge-x: -4px;
 		margin-right: 4px;
-		transform: scaleX(-1);
-	}
-
-	/* 右矢印は「まだ続きがある」ことを伝えるため、ときどき小さく跳ねる */
-	.nudge .triangle-right {
-		animation: nudge 1.6s steps(2, jump-none) infinite;
 	}
 
 	@keyframes nudge {
@@ -124,12 +122,12 @@
 			transform: translateX(0);
 		}
 		80% {
-			transform: translateX(4px);
+			transform: translateX(var(--nudge-x));
 		}
 	}
 
 	@media (prefers-reduced-motion: reduce) {
-		.nudge .triangle-right {
+		.triangle {
 			animation: none;
 		}
 	}
